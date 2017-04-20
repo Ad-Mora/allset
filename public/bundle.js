@@ -21815,13 +21815,24 @@
 	var ChatPage = function (_React$Component) {
 	    _inherits(ChatPage, _React$Component);
 
-	    function ChatPage() {
+	    function ChatPage(props) {
 	        _classCallCheck(this, ChatPage);
 
-	        return _possibleConstructorReturn(this, (ChatPage.__proto__ || Object.getPrototypeOf(ChatPage)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (ChatPage.__proto__ || Object.getPrototypeOf(ChatPage)).call(this, props));
+
+	        _this.state = {};
+	        return _this;
 	    }
 
 	    _createClass(ChatPage, [{
+	        key: 'sendData',
+	        value: function sendData() {
+	            var $inputVal = $('.text-input').val();
+	            $.post('/message', { message: $inputVal }, function (data, status) {
+	                console.log('Sent message');
+	            });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -21835,7 +21846,7 @@
 	                _react2.default.createElement('input', { type: 'text', className: 'text-input' }),
 	                _react2.default.createElement(
 	                    'button',
-	                    { className: 'submit-button btn btn-primary' },
+	                    { onClick: this.sendData, className: 'submit-button btn btn-primary' },
 	                    'Send!'
 	                )
 	            );
