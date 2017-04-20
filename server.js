@@ -4,6 +4,9 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var MessageController = require('./controllers/MessageController');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:allset');
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
