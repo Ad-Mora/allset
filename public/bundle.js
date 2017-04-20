@@ -21824,7 +21824,21 @@
 	    _createClass(ChatPage, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement('div', { className: 'chatpage-container' });
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'chatpage-container' },
+	                _react2.default.createElement(
+	                    'h1',
+	                    { className: 'app-header' },
+	                    'Enter your input below:'
+	                ),
+	                _react2.default.createElement('input', { type: 'text', className: 'text-input' }),
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'submit-button btn btn-primary' },
+	                    'Send!'
+	                )
+	            );
 	        }
 	    }]);
 
@@ -21868,7 +21882,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".chatpage-container .app-header {\n  text-align: center;\n  margin-top: 40px;\n  margin-bottom: 30px; }\n\n.chatpage-container .text-input {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 20px;\n  height: 40px;\n  width: 300px;\n  padding-left: 5px;\n  outline: none;\n  font-size: 20px; }\n\n.chatpage-container .submit-button {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 150px;\n  height: 40px;\n  outline: none;\n  border: none; }\n", ""]);
 
 	// exports
 
